@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+    <title>flex</title>
+    <style>
+        .flex-horizontal {
+            display: flex; /*设为伸缩容器*/
+        }
+
+        .flex-horizontal .left {
+            width: 200px;
+            border: 2px solid black;
+        }
+
+        .flex-horizontal .right {
+            width: 200px;
+            border: 2px solid black;
+        }
+
+        .flex-vertical{
+            display: flex; /*设为伸缩容器*/
+            flex-direction: column;
+        }
+
+        .flex-vertical .top {
+            height: 100px;
+            border: 2px solid blue;
+        }
+
+        .flex-vertical .bottom {
+            height: 100px;
+            border: 2px solid blue;
+        }
+
+        .center{
+            border: 2px solid black;
+            flex: 1; /*这里设置为占比1，填充满剩余空间*/
+        }
+    </style>
+</head>
+
+<body class="flex-vertical" style="height: 100%; margin: 0px;">
+    <div class="top">top</div>
+    <div class="flex-horizontal center">
+        <div class="left">left</div>
+        <div class="center flex-vertical">
+            <div class="top">top2</div>
+            <div class="flex-horizontal center">
+                <div class="left">left2</div>
+                <div class="center">center</div>
+                <div class="right">right2</div>
+            </div>
+            <div class="bottom">bottom2</div>
+        </div>
+        <div class="right">right</div>
+    </div>
+    <div class="bottom">bottom</div>
+</body>
+</html>
